@@ -67,9 +67,9 @@ input[type="reset"][disabled] {
     background-image:-ms-linear-gradient(top, [[setting:buttoncolor-light-perc]], [[setting:buttoncolor-lighter-perc]]);
     background-image:-webkit-gradient(linear, 0 0, 0 100%, from([[setting:buttoncolor-light-perc]]), to([[setting:buttoncolor-light-perc]]));
     background-image:-webkit-linear-gradient(top, [[setting:buttoncolor-light-perc]], [[setting:buttoncolor-lighter-perc]]);
-    background-image:t-perc]], [[setting:buttoncolor-lighter-perc]]);
-    background-image:-moz-linear-gradient(top, [[setting:but-o-linear-gradient(top, [[setting:buttoncolor-light-perc]], [[setting:buttoncolor-lighter-perc]]);
+    background-image:-o-linear-gradient(top, [[setting:buttoncolor-light-perc]], [[setting:buttoncolor-lighter-perc]]);
     background-image:linear-gradient(top, [[setting:buttoncolor-lightoncolor-light-perc]], [[setting:buttoncolor-lighter-perc]]);
+    background-image:-moz-linear-gradient(top, [[setting:but-o-linear-gradient(top, [[setting:buttoncolor-light-perc]], [[setting:buttoncolor-lighter-perc]]);
 }
 #page-footer, .block, .navbar-inner, .block > .header {
     background-color: [[setting:headerbgc]];
