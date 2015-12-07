@@ -3,6 +3,7 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   var package = require('./grunt_config.json');
+  var _themeReplaceName = 'THEMENAME';
 
   grunt.initConfig({
 
@@ -121,7 +122,7 @@ module.exports = function(grunt) {
             dest: './',
             rename: function(dest, src) {
 
-              var replaceValue = package.themeReplaceName;
+              var replaceValue = _themeReplaceName;
               var start = src.search(replaceValue);
               var end = start + replaceValue.length;
 
@@ -142,8 +143,8 @@ module.exports = function(grunt) {
         options: {
           process: function (content, srcpath) {
 
-            var newContent = content.split(package.themeReplaceName).join(package.projectTitle);
-            grunt.log.writeln('Processing ' + srcpath + 'for ' + package.themeReplaceName + 'replacement...');
+            var newContent = content.split(_themeReplaceName).join(package.projectTitle);
+            grunt.log.writeln('Processing ' + srcpath + 'for ' + _themeReplaceName + 'replacement...');
 
             return newContent;
           },

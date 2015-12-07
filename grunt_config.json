@@ -1,6 +1,5 @@
 {
-  "projectTitle": "dfsnz",
-  "projectId": "j832",
-  "themeVersion":"2.7.8",
-  "themeReplaceName": "THEMENAME"
+  "projectTitle": false,
+  "projectId": false,
+  "themeVersion":"x.y.z"
 }
