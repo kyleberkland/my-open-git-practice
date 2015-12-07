@@ -205,7 +205,7 @@ module.exports = function(grunt) {
     }
 
     grunt.task.run(
-      'copy:renameStubFilesAndContents',
+      'copy:renameStubFilesAndContents'
       //'clean:removeStubFiles'
     );
 
