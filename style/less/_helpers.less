@@ -1,0 +1,232 @@
+/* Some helpers lifted from: http://lesselements.com/ */
+
+
+/*
+########   #######  ##     ##    ##     ##  #######  ########  ######## ##       
+##     ## ##     ##  ##   ##     ###   ### ##     ## ##     ## ##       ##       
+##     ## ##     ##   ## ##      #### #### ##     ## ##     ## ##       ##       
+########  ##     ##    ###       ## ### ## ##     ## ##     ## ######   ##       
+##     ## ##     ##   ## ##      ##     ## ##     ## ##     ## ##       ##       
+##     ## ##     ##  ##   ##     ##     ## ##     ## ##     ## ##       ##       
+########   #######  ##     ##    ##     ##  #######  ########  ######## ######## 
+*/
+
+/* natural box model layout applied to all elements - no support for IE6/7 */
+* {
+    .box-sizing
+}
+
+/* Display Block w/ width & height */
+.block (@width:0px;@height:0px;) {
+    display: block;
+    width: @width;
+    height: @height;
+}
+
+.margin(@mgTop: 0, @mgRight: auto, @mgBottom: 0, @mgLeft: auto) {
+    margin:@mgTop @mgRight @mgBottom @mgLeft;
+}
+
+.mg-center {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.padding(@pdTop: 0, @pdRight: 0, @pdBottom: 0, @pdLeft: 0) {
+    padding:@pdTop @pdRight @pdBottom @pdLeft;
+}
+
+
+/*
+
+ ######   ######   ######   #######  
+##    ## ##    ## ##    ## ##     ## 
+##       ##       ##              ## 
+##        ######   ######   #######  
+##             ##       ##        ## 
+##    ## ##    ## ##    ## ##     ## 
+ ######   ######   ######   #######  
+
+*/
+
+.perspective(@value: 600px) {
+  -webkit-perspective: @value;
+  -moz-perspective: @value;
+  -o-perspective: @value;
+  perspective: @value;
+}
+.transition-duration(@duration: 0.2s) {
+  -moz-transition-duration: @duration;
+  -webkit-transition-duration: @duration;
+  -o-transition-duration: @duration;
+  transition-duration: @duration;
+}
+.transition(@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: all @duration @ease;
+  -moz-transition: all @duration @ease;
+  -o-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+.transform(...) {
+  -webkit-transform: @arguments;
+  -moz-transform: @arguments;
+  -o-transform: @arguments;
+  -ms-transform: @arguments;
+  transform: @arguments;
+}
+.translate(@x:0, @y:0) {
+  .transform(translate(@x, @y));
+}
+.background-clip(@argument: padding-box) {
+  -moz-background-clip: @argument;
+  -webkit-background-clip: @argument;
+  background-clip: @argument;
+}
+
+
+/* RGBA background colour with IE Fallback */
+.rgba(@colour, @alpha) {
+    @alphaColour: hsla(hue(@colour), saturation(@colour), lightness(@colour), @alpha);
+    @ieAlphaColour: argb(@alphaColour);
+
+    background-color: @colour; // Fallback for older browsers
+
+    // IE hacks
+    zoom: 1; // hasLayout
+    background-color: transparent\9;
+    -ms-filter:  "progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieAlphaColour}, endColorstr=@{ieAlphaColour})"; // IE 8+
+        filter: ~"progid:DXImageTransform.Microsoft.gradient(startColorstr=@{ieAlphaColour}, endColorstr=@{ieAlphaColour})"; // IE 6 & 7
+    background-color: @alphaColour;
+}
+
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+  background: @color;
+  background: -webkit-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0, @start),
+                               color-stop(1, @stop));
+  background: -ms-linear-gradient(bottom,
+                                  @start,
+                                  @stop);
+  background: -moz-linear-gradient(center bottom,
+                                   @start 0%,
+                                   @stop 100%);
+  background: -o-linear-gradient(@stop,
+                                 @start);
+  filter: e(%("progid:DXImageTransform.Microsoft.gradient(startColorstr='%d', endColorstr='%d', GradientType=0)",@stop,@start));
+}
+
+.rounded(@radius: 2px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+    -webkit-border-top-right-radius: @topright;
+    -webkit-border-bottom-right-radius: @bottomright;
+    -webkit-border-bottom-left-radius: @bottomleft;
+    -webkit-border-top-left-radius: @topleft;
+    -moz-border-radius-topright: @topright;
+    -moz-border-radius-bottomright: @bottomright;
+    -moz-border-radius-bottomleft: @bottomleft;
+    -moz-border-radius-topleft: @topleft;
+    border-top-right-radius: @topright;
+    border-bottom-right-radius: @bottomright;
+    border-bottom-left-radius: @bottomleft;
+    border-top-left-radius: @topleft;
+    .background-clip(padding-box);
+}
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+  @opperc: @opacity * 100;
+  -ms-filter: ~"progid:DXImageTransform.Microsoft.Alpha(opacity=@{opperc})";
+  filter: ~"alpha(opacity=@{opperc})";
+}
+.box-shadow(@x-axis: 0px, @y-axis: 0px, @blur: 2px, @color: black, @opacity: 100) {
+  -webkit-box-shadow: @x-axis @y-axis @blur fade(@color, @opacity);
+  -moz-box-shadow: @x-axis @y-axis @blur fade(@color, @opacity);
+  box-shadow: @x-axis @y-axis @blur fade(@color, @opacity);
+}
+
+.box-sizing(@type: border-box) {
+  -moz-box-sizing: @type;
+  -webkit-box-sizing: @type;
+  box-sizing: @type;
+}
+
+
+.rotate(@degrees: 45deg, @writingmode: lr-tb) {
+  -webkit-transform: rotate(@degrees);
+  -moz-transform: rotate(@degrees);
+  -o-transform: rotate(@degrees);
+  writing-mode: @writingmode;
+
+  /* IE8+ calculations, though they also need width/height and adjustment margins:
+     http://www.useragentman.com/IETransformsTranslator/
+  */
+  & when (@degrees = 270deg) {
+  }
+}
+
+
+/*
+
+ ######   #######  ##     ## ########   #######  ##    ## ######## ##    ## ########  ######  
+##    ## ##     ## ###   ### ##     ## ##     ## ###   ## ##       ###   ##    ##    ##    ## 
+##       ##     ## #### #### ##     ## ##     ## ####  ## ##       ####  ##    ##    ##       
+##       ##     ## ## ### ## ########  ##     ## ## ## ## ######   ## ## ##    ##     ######  
+##       ##     ## ##     ## ##        ##     ## ##  #### ##       ##  ####    ##          ## 
+##    ## ##     ## ##     ## ##        ##     ## ##   ### ##       ##   ###    ##    ##    ## 
+ ######   #######  ##     ## ##         #######  ##    ## ######## ##    ##    ##     ######  
+
+*/
+
+/*  Reset button styles */
+.button-reset() {
+    background: none;
+    border: 0 none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-weight: normal;
+
+        &:hover {
+            color: #fff;
+        }
+}
+
+
+
+
+/*
+
+##     ## ####  ######   ######  
+###   ###  ##  ##    ## ##    ## 
+#### ####  ##  ##       ##       
+## ### ##  ##   ######  ##       
+##     ##  ##        ## ##       
+##     ##  ##  ##    ## ##    ## 
+##     ## ####  ######   ######  
+
+*/
+
+.disabled(@cursor: default; @opacity:1) {
+    color:@disabled-color;
+    cursor:@cursor;
+    .opacity(@opacity);
+}
+
+.nolist {
+    margin:0;
+    padding:0;
+
+    li {
+      margin:0;
+      padding:0;
+      list-style-type:none;      
+    }
+}
