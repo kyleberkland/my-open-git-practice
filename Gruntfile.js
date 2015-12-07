@@ -199,8 +199,8 @@ module.exports = function(grunt) {
 
     // check that there is a projectTitle grunt config option defined
     // TODO: also check that a projectTitle does not already exist, as it would conflict with another theme
-    if (!grunt.option('projectTitle')) {
-      grunt.error('A projectTitle and projectId must be specified in grunt_config.json');
+    if (!package.projectTitle || !package.projectId) {
+      grunt.warn('A projectTitle and projectId must be specified in grunt_config.json');
       return;
     }
 
