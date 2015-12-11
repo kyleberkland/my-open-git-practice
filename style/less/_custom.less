@@ -63,12 +63,19 @@ body {
 }
 #page {
   padding:0 20px;
+  max-width: @max-page-width;
+  
+  background: transparent url([[pix:theme|header-double-triangle]]) center top no-repeat;
 }
   #page-header {
     position:relative;
+    max-width: @max-content-width;
+    margin: 0 auto;
+    min-height: 150px;
   }
   #page-content {
-
+    max-width: @max-content-width;
+    margin: 0 auto; 
   }
 
 /* horizontally centered, width limited at desktop resolutions */
