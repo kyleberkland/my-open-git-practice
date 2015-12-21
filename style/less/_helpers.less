@@ -39,6 +39,13 @@
     visibility: hidden;
 }
 
+.pseudo-base(@width: auto, @height: auto) {
+    content: ' ';
+    display:block;
+    width:@width;
+    height:@height;
+}
+
 /* Display Block w/ width & height */
 .block (@width:0px;@height:0px;) {
     display: block;
