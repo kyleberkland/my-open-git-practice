@@ -169,8 +169,15 @@ module.exports = function(grunt) {
 
   grunt.option('timestamp', grunt.template.today('yyyymmdd'));
 
-  // build related tasks
+  // deployment related tasks
   grunt.registerTask('build', 'Build tasks.', function() {
+
+    grunt.task.run(
+      'less:development'
+    );
+  });
+
+  grunt.registerTask('package', 'Package tasks.', function() {
 
     grunt.task.run(
       'compress:main'
