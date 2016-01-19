@@ -46,7 +46,7 @@ module.exports = function(grunt) {
             cwd: './', // current working directory
             src: [
               '**/**', // any folders or sub folders, any files
-              '!**.zip', // except those files with zip extension
+              '!**.zip','!**/*.7z', // except compressed files
               '!**/.git/**','!**/#assets/**','!**/node_modules/**','!**/*.sql','!README.md', '!**/style/less/**','!.gitignore','!package.json','!grunt_config.json','!Gruntfile.js' // exclude build related files
             ],
             dest: ''
