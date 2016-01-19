@@ -49,7 +49,7 @@ module.exports = function(grunt) {
               '!**.zip','!**/*.7z', // except compressed files
               '!**/.git/**','!**/#assets/**','!**/node_modules/**','!**/*.sql','!README.md', '!**/style/less/**','!.gitignore','!package.json','!grunt_config.json','!Gruntfile.js' // exclude build related files
             ],
-            dest: ''
+            dest: '<%= settings.projectTitle %>/'
           }
         ]
       }
