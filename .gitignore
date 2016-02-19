@@ -18,5 +18,5 @@ Thumbs.db
 _notes
 diff.log
 /node_modules/
-#assets
+/#assets/
 style/custom.css
