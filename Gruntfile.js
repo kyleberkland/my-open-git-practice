@@ -71,7 +71,7 @@ module.exports = function(grunt) {
         },
         files: {
           // target.css file: source.less file
-          'style/custom.css': 'style/less/_collection.less'
+          'style/custom.css': '_assets/less/_collection.less'
         }
 
       }
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
     watch: {
       styles: {
         // Which files to watch (all .less files recursively in the less directory)
-        files: ['style/less/*.less'],
+        files: ['_assets/less/*.less'],
         tasks: ['less:development'],
         options: {
           nospawn: true
