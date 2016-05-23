@@ -1,0 +1,1 @@
+Client branding assets for this project should live in here.

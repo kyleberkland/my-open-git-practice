@@ -1,0 +1,1 @@
+Any dependencies for PSD assets should live in here, for example; fonts, webfonts, images, vectors, Ai files, etc.
