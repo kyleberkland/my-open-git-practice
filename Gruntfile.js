@@ -118,7 +118,7 @@ module.exports = function(grunt) {
             expand: true,
             filter: 'isFile',
             cwd: './', 
-            src: ['**','!**/*.json','!**/.git/**','!**/node_modules/**','!**/*.sql','!README.md','!**/*.png','!**/*.jpg','!**/*.gif','!**/*.svg'],
+            src: ['**','!**/*.json','!**/.git/**','!**/node_modules/**','!**/_assets/**','!**/*.sql','!README.md','!**/*.png','!**/*.jpg','!**/*.gif','!**/*.svg'],
             dest: './',
             rename: function(dest, src) {
 
