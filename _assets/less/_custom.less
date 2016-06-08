@@ -1,0 +1,768 @@
+/**********************************************************************************************************
+
+########  ######## ########  ##     ##  ######   
+##     ## ##       ##     ## ##     ## ##    ##  
+##     ## ##       ##     ## ##     ## ##        
+##     ## ######   ########  ##     ## ##   #### 
+##     ## ##       ##     ## ##     ## ##    ##  
+##     ## ##       ##     ## ##     ## ##    ##  
+########  ######## ########   #######   ######   
+
+.purgecaches,
+.continuebutton {
+  position:fixed;
+  z-index:9999;
+  top:0;
+  left:0;
+  border:5px dashed purple;
+  padding:5px;
+  color:black;
+}
+.purgecaches a {
+  color:black !important;
+}
+.continuebutton {
+  border:5px dashed green;
+}
+**********************************************************************************************************/
+
+
+
+/**********************************************************************************************************
+
+ ######   #######  ########  ######## 
+##    ## ##     ## ##     ## ##       
+##       ##     ## ##     ## ##       
+##       ##     ## ########  ######   
+##       ##     ## ##   ##   ##       
+##    ## ##     ## ##    ##  ##       
+ ######   #######  ##     ## ######## 
+
+**********************************************************************************************************/
+
+
+html {
+    background: @page-bg-color;
+}
+body {
+    background-color: @page-bg-color;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ul,
+div,
+body {
+    font-family: @font-primary;
+}
+#page {
+  padding:0 20px;
+  max-width: @max-page-width;
+}
+  #page-header {
+    position:relative;
+    max-width: @max-content-width;
+    margin: 0 auto;
+    min-height: 150px;
+  }
+  #page-content {
+    max-width: @max-content-width;
+    margin: 0 auto; 
+  }
+
+/* horizontally centered, width limited at desktop resolutions */
+.container-fluid,
+.navbar-inner {
+  max-width:@max-desktop-width;
+  margin:0 auto;
+}
+
+
+/* max width desktop */
+@media screen and (max-width: @max-desktop-width) {
+/*
+  body {
+    background:yellow;
+  }
+*/
+}
+
+
+/* bootstrap menu breakpoint */
+@media screen and (max-width: @bootstrap-trigger-width) {
+/*
+  body {
+    background:green;
+  }
+*/
+
+  body {
+    padding:0;
+  }
+}
+
+/* tablet portrait */
+@media screen and (max-width: @tablet-portrait-width) {
+/*
+  body {
+    background:red;
+  }
+*/
+}
+
+/* smartphone */
+@media screen and (max-width: @smartphone-portrait-width) {
+/*
+  body {
+    background:pink;
+  }
+*/
+}
+
+
+/**********************************************************************************************************
+
+##    ##    ###    ##     ## ########     ###    ########  
+###   ##   ## ##   ##     ## ##     ##   ## ##   ##     ## 
+####  ##  ##   ##  ##     ## ##     ##  ##   ##  ##     ## 
+## ## ## ##     ## ##     ## ########  ##     ## ########  
+##  #### #########  ##   ##  ##     ## ######### ##   ##   
+##   ### ##     ##   ## ##   ##     ## ##     ## ##    ##  
+##    ## ##     ##    ###    ########  ##     ## ##     ## 
+
+***********************************************************************************************************/
+
+.navbar {
+    position:relative;
+    margin: 0 auto;
+    padding: 0 20px;
+    background: @primary-color;
+}
+  .navbar-inner {
+      background: @primary-color;
+      border-bottom: none;
+      .box-shadow();
+  }
+  .ie .navbar-inner {
+      filter:'';
+  }
+    #logo {
+    }
+      #logo a,
+      #logo a:visited,
+      #logo a:hover {
+          text-decoration: none;
+      }
+
+      header h1 {
+      }
+      .langmenu {
+          right: 0px;
+          padding: 0px;
+          position: absolute;
+      }
+
+  .navbar .container-fluid {
+    padding:0;
+  }
+    .navbar .nav {
+      line-height:inherit;
+    }
+        .navbar-text .logininfo {
+          line-height:20px;
+        }
+          .logininfo a {
+            display:inline-block;
+          }
+
+          .logininfo a,
+          .logininfo a.link-as-button {
+
+            color: @primary-color;
+
+            &:hover,
+            a:visited {
+              color: @secondary-color;
+            }
+
+          }
+
+
+
+
+
+/*
+##     ##  #######  
+###   ### ##     ## 
+#### #### ##     ## 
+## ### ## ##     ## 
+##     ## ##  ## ## 
+##     ## ##    ##  
+##     ##  ##### ## 
+*/
+
+/* max width desktop */
+@media screen and (max-width: @max-desktop-width) {
+
+}
+
+
+/* bootstrap menu breakpoint */
+@media screen and (max-width: @bootstrap-trigger-width) {
+
+}
+
+
+/* smartphone */
+@media screen and (max-width: @smartphone-portrait-width) {
+
+}
+
+
+/**********************************************************************************************************
+
+         ########  #######  ########    ###    ########     ###          ##     ## ######## ##    ## ##     ## 
+            ##    ##     ##    ##      ## ##   ##     ##   ## ##         ###   ### ##       ###   ## ##     ## 
+            ##    ##     ##    ##     ##   ##  ##     ##  ##   ##        #### #### ##       ####  ## ##     ## 
+            ##    ##     ##    ##    ##     ## ########  ##     ##       ## ### ## ######   ## ## ## ##     ## 
+            ##    ##     ##    ##    ######### ##   ##   #########       ##     ## ##       ##  #### ##     ## 
+            ##    ##     ##    ##    ##     ## ##    ##  ##     ##       ##     ## ##       ##   ### ##     ## 
+            ##     #######     ##    ##     ## ##     ## ##     ##       ##     ## ######## ##    ##  #######  
+
+***********************************************************************************************************/
+
+div#totaramenu,
+div#custommenu {
+
+  position: relative;
+  z-index: 2;
+  width: auto;
+  clear: none;
+  margin:0;
+  padding:0;
+
+  ul li {
+
+    margin:0;
+    background:none;
+
+    ul {
+      border:none !important;
+    }
+
+    a,
+    a:hover,
+    &.selected,
+    &.selected a {
+      background:none;
+    }
+
+    a {
+      padding:0 20px;
+      border: 0;
+      line-height:35px;
+      border-left: 1px solid @light-grey;
+      color:@secondary-color;
+      .border-radius();
+    }
+
+    &.first a {
+      border-left:none;
+    }
+
+    &.has-sub-menu {
+
+      padding-right:10px;
+
+      & > a {
+        margin-right:10px;
+        background:transparent url([[pix:theme|menu-dropdown]]) right center no-repeat;
+      }
+
+      li a,
+      &:hover li a {
+        color:@primary-contrast-color;
+        background:none;
+      }
+
+    }
+
+  }
+}
+
+
+
+/*
+##     ##  #######  
+###   ### ##     ## 
+#### #### ##     ## 
+## ### ## ##     ## 
+##     ## ##  ## ## 
+##     ## ##    ##  
+##     ##  ##### ## 
+*/
+
+/* max width desktop */
+@media screen and (max-width: @max-desktop-width) {
+
+}
+
+/* bootstrap menu breakpoint */
+@media screen and (max-width: @bootstrap-trigger-width) {
+
+}
+
+
+/************************************************************************************************************************
+
+         ########  ########  ########    ###    ########   ######  ########  ##     ## ##     ## ########  
+         ##     ## ##     ## ##         ## ##   ##     ## ##    ## ##     ## ##     ## ###   ### ##     ## 
+         ##     ## ##     ## ##        ##   ##  ##     ## ##       ##     ## ##     ## #### #### ##     ## 
+         ########  ########  ######   ##     ## ##     ## ##       ########  ##     ## ## ### ## ########  
+         ##     ## ##   ##   ##       ######### ##     ## ##       ##   ##   ##     ## ##     ## ##     ## 
+         ##     ## ##    ##  ##       ##     ## ##     ## ##    ## ##    ##  ##     ## ##     ## ##     ## 
+         ########  ##     ## ######## ##     ## ########   ######  ##     ##  #######  ##     ## ########  
+
+*************************************************************************************************************************/
+
+.breadcrumb-nav {
+  float:none;
+  background-color: @secondary-color;
+}
+  .breadcrumb-nav ul {
+    margin: 10px 5px;
+  }
+
+
+/*
+##     ##  #######  
+###   ### ##     ## 
+#### #### ##     ## 
+## ### ## ##     ## 
+##     ## ##  ## ## 
+##     ## ##    ##  
+##     ##  ##### ## 
+*/
+
+
+/**********************************************************************************************************************************
+
+         ########  #######   #######  ######## ######## ########  
+         ##       ##     ## ##     ##    ##    ##       ##     ## 
+         ##       ##     ## ##     ##    ##    ##       ##     ## 
+         ######   ##     ## ##     ##    ##    ######   ########  
+         ##       ##     ## ##     ##    ##    ##       ##   ##   
+         ##       ##     ## ##     ##    ##    ##       ##    ##  
+         ##        #######   #######     ##    ######## ##     ## 
+
+**********************************************************************************************************************************/
+
+#page-footer {
+    border-top: 1px solid @medium-grey;
+}
+
+
+/**********************************************************************************************************
+
+    ########  ##        #######   ######  ##    ##  ######  
+    ##     ## ##       ##     ## ##    ## ##   ##  ##    ## 
+    ##     ## ##       ##     ## ##       ##  ##   ##       
+    ########  ##       ##     ## ##       #####     ######  
+    ##     ## ##       ##     ## ##       ##  ##         ## 
+    ##     ## ##       ##     ## ##    ## ##   ##  ##    ## 
+    ########  ########  #######   ######  ##    ##  ######  
+
+**********************************************************************************************************/
+
+
+.block {
+    padding: 0px;
+    background-color: transparent;
+    border: none;
+
+    .box-shadow();
+
+    .header .title h2 {
+      color: @primary-contrast-color;
+    }
+
+    .block .content {
+      .border-radius();
+    }
+}
+
+
+
+
+/**********************************************************************************************************
+
+##        #######   ######   #### ##    ##         ####          ##     ##  #######  ##     ## ######## 
+##       ##     ## ##    ##   ##  ###   ##        ##  ##         ##     ## ##     ## ###   ### ##       
+##       ##     ## ##         ##  ####  ##         ####          ##     ## ##     ## #### #### ##       
+##       ##     ## ##   ####  ##  ## ## ##        ####           ######### ##     ## ## ### ## ######   
+##       ##     ## ##    ##   ##  ##  ####       ##  ## ##       ##     ## ##     ## ##     ## ##       
+##       ##     ## ##    ##   ##  ##   ###       ##   ##         ##     ## ##     ## ##     ## ##       
+########  #######   ######   #### ##    ##        ####  ##       ##     ##  #######  ##     ## ######## 
+
+**********************************************************************************************************/
+
+#page-site-index {
+
+    #page {
+
+      padding:0;
+      background-image: none;
+
+      #page-header {
+        min-height:0px;
+      }
+
+      #page-content {
+
+        max-width:100%;
+
+        #region-main {
+
+          float:none;
+
+          .mdl-align,
+          .mdl-align + br {
+            display:none;
+          }
+
+        } // /#region-main
+
+
+        #block-region-side-pre {
+
+          float:none;
+          margin:0 auto;
+          
+          /* 50/50 split of home page blocks currently */
+          .block {
+
+            width: 49%;
+            float: left;
+            margin: 0% 2% 2% 0%;
+            border-bottom: none;
+            
+            .border-radius();
+
+            &:nth-of-type(2n) {
+              margin-right: 0; /* every second half-width .block */
+            }
+          }
+
+          /* custom course listings */
+
+
+        } // /#block-region-side-pre
+
+      } // /#page-content
+    } // /#page
+
+
+    #page-footer {
+    }
+
+}
+
+
+
+/*
+##     ##  #######  
+###   ### ##     ## 
+#### #### ##     ## 
+## ### ## ##     ## 
+##     ## ##  ## ## 
+##     ## ##    ##  
+##     ##  ##### ## 
+*/
+
+/* tablet portrait */
+@media screen and (max-width: @tablet-portrait-width) {
+
+}
+
+
+/**********************************************************************************************************************************
+
+             ######  ##     ##  ######  ########  #######  ##     ##    ########  ##        #######   ######  ##    ##  ######  
+            ##    ## ##     ## ##    ##    ##    ##     ## ###   ###    ##     ## ##       ##     ## ##    ## ##   ##  ##    ## 
+            ##       ##     ## ##          ##    ##     ## #### ####    ##     ## ##       ##     ## ##       ##  ##   ##       
+            ##       ##     ##  ######     ##    ##     ## ## ### ##    ########  ##       ##     ## ##       #####     ######  
+            ##       ##     ##       ##    ##    ##     ## ##     ##    ##     ## ##       ##     ## ##       ##  ##         ## 
+            ##    ## ##     ## ##    ##    ##    ##     ## ##     ##    ##     ## ##       ##     ## ##    ## ##   ##  ##    ## 
+             ######   #######   ######     ##     #######  ##     ##    ########  ########  #######   ######  ##    ##  ######  
+
+**********************************************************************************************************************************/
+
+
+
+/*
+##     ##  #######  
+###   ### ##     ## 
+#### #### ##     ## 
+## ### ## ##     ## 
+##     ## ##  ## ## 
+##     ## ##    ##  
+##     ##  ##### ## 
+*/
+
+
+
+/* bootstrap menu breakpoint */
+@media screen and (max-width: @bootstrap-trigger-width) {
+
+}
+
+
+
+/* tablet portrait */
+@media screen and (max-width: @tablet-portrait-width) {
+
+}
+
+
+/* smartphone */
+@media screen and (max-width: @smartphone-portrait-width) {
+
+}
+
+
+/**********************************************************************************************************************************
+
+ ######   #######  ##     ## ########   ######  ########    ########     ###     ######   ########  ######  
+##    ## ##     ## ##     ## ##     ## ##    ## ##          ##     ##   ## ##   ##    ##  ##       ##    ## 
+##       ##     ## ##     ## ##     ## ##       ##          ##     ##  ##   ##  ##        ##       ##       
+##       ##     ## ##     ## ########   ######  ######      ########  ##     ## ##   #### ######    ######  
+##       ##     ## ##     ## ##   ##         ## ##          ##        ######### ##    ##  ##             ## 
+##    ## ##     ## ##     ## ##    ##  ##    ## ##          ##        ##     ## ##    ##  ##       ##    ## 
+ ######   #######   #######  ##     ##  ######  ########    ##        ##     ##  ######   ########  ######  
+
+**********************************************************************************************************************************/
+
+
+
+
+/**********************************************************************************************************************************
+
+##     ## ##    ##    ##       ########    ###    ########  ##    ## #### ##    ##  ######   
+###   ###  ##  ##     ##       ##         ## ##   ##     ## ###   ##  ##  ###   ## ##    ##  
+#### ####   ####      ##       ##        ##   ##  ##     ## ####  ##  ##  ####  ## ##        
+## ### ##    ##       ##       ######   ##     ## ########  ## ## ##  ##  ## ## ## ##   #### 
+##     ##    ##       ##       ##       ######### ##   ##   ##  ####  ##  ##  #### ##    ##  
+##     ##    ##       ##       ##       ##     ## ##    ##  ##   ###  ##  ##   ### ##    ##  
+##     ##    ##       ######## ######## ##     ## ##     ## ##    ## #### ##    ##  ######   
+
+**********************************************************************************************************************************/
+
+
+
+
+/**********************************************************************************************************************************
+
+########  ####    ###    ##        #######   ######    ######  
+##     ##  ##    ## ##   ##       ##     ## ##    ##  ##    ## 
+##     ##  ##   ##   ##  ##       ##     ## ##        ##       
+##     ##  ##  ##     ## ##       ##     ## ##   ####  ######  
+##     ##  ##  ######### ##       ##     ## ##    ##        ## 
+##     ##  ##  ##     ## ##       ##     ## ##    ##  ##    ## 
+########  #### ##     ## ########  #######   ######    ######  
+
+**********************************************************************************************************************************/
+
+/**
+ * jQuery dialogs
+ **/
+div.totara-dialog {
+  border:2px solid @secondary-color;
+  background-color: @primary-color;
+  .border-radius();
+}
+  .totara-dialog .ui-dialog-titlebar {
+    border:none;
+  }
+    .totara-dialog .ui-dialog-titlebar h2 {
+      margin:0 0 25px 0;
+    }
+  .ui-dialog .ui-dialog-buttonpane {
+    border-color:#00aec5;
+  }
+    .ui-dialog .ui-dialog-buttonpane button {
+      line-height:normal;
+    }
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  .border-radius(3px);
+}
+
+.ui-datepicker {
+  padding:10px;
+  border:3px solid @secondary-color;
+  background-color: @primary-color;
+
+  .border-radius();
+  .box-shadow(0px; 8px; 20px; @medium-grey)
+}
+  .ui-datepicker .ui-datepicker-header {
+    border:none;
+    background:none;
+  }
+  .ui-datepicker th {
+    padding-top:5px;
+    padding-bottom:5px;
+    border-bottom:3px solid @secondary-color;
+  }
+  .ui-datepicker tbody tr:first-child td {
+    padding-top:10px;
+  }
+  .ui-datepicker .ui-state-highlight {
+    background:#c0e3e8;
+    border:1px solid #7dcdd8;
+  }
+  .ui-datepicker .ui-state-default:hover {
+    background:#c0e3e8;
+  }
+  
+
+/**
+ * YUI dialogs
+ **/
+.yui3-panel,
+.user-enroller-panel,
+.chooserdialogue .moodle-dialogue-wrap {
+  border:3px solid @secondary-color !important;
+
+  .border-radius();
+  .box-shadow(0px; 8px; 20px; @medium-grey)
+}
+  .user-enroller-panel .uep-wrap {
+    margin:0;
+    border:none;
+    background:none;
+    padding:20px;
+  }
+    .user-enroller-panel .uep-header {
+      padding: 0;
+      background:none;
+    }
+      .user-enroller-panel .uep-header h2 {
+        font-size:1.4em;
+        margin:0;
+        padding:0 0 15px 0;
+      }
+      .user-enroller-panel .uep-header .close {
+        top:10px;
+        right:10px;
+      }
+    .user-enroller-panel .uep-content {
+      border:none;
+      border-bottom:1px solid @secondary-color;
+    }
+      .user-enroller-panel .uep-search-results .user .details {
+        width:220px;
+      }
+    .user-enroller-panel .uep-footer {
+      padding:5px;
+      background:none;
+    }
+
+/* Wow - these are a mess... */
+  .yui3-panel,
+  .chooserdialogue .moodle-dialogue-wrap {
+    padding:20px;
+  }
+    .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-hd,
+    #filesskin .yui3-widget-hd {
+      background: none !important;
+      filter: '' !important;
+      font-size: 1.4em !important;
+      font-weight: bold !important;
+      letter-spacing: 0;
+      color:#2b9dad !important;
+      text-align: left !important;
+      text-shadow:none;
+      padding:5px 0 15px 0;
+      border-radius:0;
+    }
+    .chooserdialogue .moodle-dialogue-wrap .moodle-dialogue-bd {
+      background:none;
+    }
+    .choosercontainer #chooseform .options {
+      border-bottom-color:#2b9dad ;
+    }
+
+#filesskin .file-picker.fp-generallayout {
+  background:none;
+  border:none;
+
+  .border-radius();
+  .box-shadow(0px; 0px; 0px; @medium-grey)
+}
+  .file-picker .fp-repo-area {
+    top:40px;
+  }
+
+.yui3-overlay,
+#dateselector-calendar-panel,
+.block .calendar-event-panel,
+#helppopupbox {
+  border:2px solid @secondary-color;
+  background-color: @primary-color;
+
+  .border-radius();
+  .box-shadow(0px; 8px; 20px; @medium-grey);
+}
+  #dateselector-calendar-content {
+    margin:0;
+    border:none;
+  }
+  .yui-skin-sam .yui-calcontainer {
+    background:transparent;
+    border:none;
+  }
+  .calendar-event-panel .yui3-overlay-content {
+    background-color: transparent;
+    border: none;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  
+#newmessageoverlay {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  min-width: 300px;
+  padding-bottom: 70px;
+  width: 50%;
+  border:2px solid @secondary-color;
+  border-bottom:none;
+  background-color: @primary-color;  
+
+  .border-radius();
+  .box-shadow(-3px; -2px; 30px; @medium-grey)
+}
+  #newmessageoverlay #newmessagetext {
+    display: inline-block;
+    margin: 10px 0 25px 0;
+    padding: 0 20px;
+    font-weight: bold;
+    background:transparent url([[pix:theme|icon_new_msg]]) left top no-repeat;
+  }
+  #newmessageoverlay #newmessagelinks #notificationyes {
+    padding-left:20px;
+    margin-right:25px;
+    background:transparent url([[pix:theme|icon_msg_all]]) left top no-repeat;
+  }
+  #newmessageoverlay #newmessagelinks #notificationno {
+    padding-left:20px;
+    background:transparent url([[pix:theme|icon_msg_ignore]]) left 2px no-repeat;
+  }
