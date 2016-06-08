@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   require('time-grunt')(grunt);
 
   var package = require('./grunt_config.json');
-  var _themeReplaceName = 'THEMENAME';
+  var _themeReplaceName = 'gitopen';
 
   grunt.initConfig({
 

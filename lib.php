@@ -31,7 +31,7 @@ defined('MOODLE_INTERNAL') || die();
  * @param theme_config $theme
  * @return string
  */
-function theme_THEMENAME_process_css($css, $theme) {
+function theme_gitopen_process_css($css, $theme) {
 
     $substitutions = array(
         'linkcolor' => '#087BB1',
@@ -47,7 +47,7 @@ function theme_THEMENAME_process_css($css, $theme) {
     } else {
         $customcss = null;
     }
-    $css = theme_THEMENAME_set_customcss($css, $customcss);
+    $css = theme_gitopen_set_customcss($css, $customcss);
 
     return $css;
 }
@@ -59,7 +59,7 @@ function theme_THEMENAME_process_css($css, $theme) {
  * @param mixed $customcss
  * @return string
  */
-function theme_THEMENAME_set_customcss($css, $customcss) {
+function theme_gitopen_set_customcss($css, $customcss) {
     $tag = '[[setting:customcss]]';
     $replacement = $customcss;
     if (is_null($replacement)) {
@@ -81,9 +81,9 @@ function theme_THEMENAME_set_customcss($css, $customcss) {
  * @param array $options
  * @return bool
  */
-function theme_THEMENAME_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+function theme_gitopen_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ($context->contextlevel == CONTEXT_SYSTEM && ($filearea === 'logo' || $filearea === 'favicon')) {
-        $theme = theme_config::load('THEMENAME');
+        $theme = theme_config::load('gitopen');
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     } else {
         send_file_not_found();
