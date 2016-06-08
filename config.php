@@ -23,7 +23,7 @@
  * @subpackage theme
  */
 
-$THEME->name = 'THEMENAME';
+$THEME->name = 'gitopen';
 $THEME->parents = array('standardtotararesponsive', 'bootstrapbase');
 $THEME->sheets = array(
     'custom',
@@ -40,6 +40,6 @@ if (!(core_useragent::is_ie() && !core_useragent::check_ie_version('10.0'))) {
     $THEME->enable_dock = true;
 }
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
-$THEME->csspostprocess = 'theme_THEMENAME_process_css';
-$THEME->javascripts_footer = array('THEMENAME_js_additional_html');
+$THEME->csspostprocess = 'theme_gitopen_process_css';
+$THEME->javascripts_footer = array('gitopen_js_additional_html');
 
