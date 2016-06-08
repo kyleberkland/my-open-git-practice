@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Setup (brand new theme only)
  1. create a directory in htdocs/theme/ using acceptable Totara naming conventions, eg; 'catholichealthcare', this name is referred to as `themename` in the following steps
  2. clone this repository into that directory, ensuring that another root subfolder is *not* created, eg; 'htdocs/theme/themename/CLONED_FILES_HERE' should be the expected structure
@@ -20,3 +21,6 @@
  - running step 6. will rename quite a few file names and file content parts - ensure you do this part correctly. If you fail, delete the entire git branch and start again
  - running step 10. will push your branch to the remote server - this only needs to happen once
  - running step 11. will automatically re-version your Theme which will then trigger a plugin upgrade once deployed to a Totara instance
+=======
+# my-open-git-practice
+>>>>>>> 545c9fef782f02e1cc47ea46573b74745258854a
